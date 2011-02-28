@@ -1,0 +1,9 @@
+<!-- app/views/author_books/index.html.erb -->
+<table border="1">
+  <% @authorbooks.each do |ab| %>
+    <tr>
+      <td><%= ab.first_name %> <%= ab.last_name %></td>
+      <td><%= ab.title %></td>
+    </tr>
+  <% end %>
+</table>

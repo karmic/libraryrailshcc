@@ -1,0 +1,2 @@
+class AuthorBooksindexController < ApplicationController
+end
