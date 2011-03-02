@@ -1,6 +1,24 @@
 Libraryrailshcc::Application.routes.draw do
-  get "author_books/index"
-  match 'author_books/findByTitle/:title' => "author_books#findByTitle"
+  match "pages/login", :via => [:get,:post]
+
+  get "pages/logout"
+
+	get "users/new"
+
+	match "users/create" => "users#create"
+	match "users/chooseUser" => "users#chooseUser"
+	match "users/edit" => "users#edit"
+	match "users/update" => "users#update"
+	match "pages/continue" => "pages#continue"
+
+	root :to => "pages#login"
+
+	get "users/edit"
+
+	get "users/index"
+
+	get "author_books/index"
+end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,7 +76,7 @@ Libraryrailshcc::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-end
+
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
